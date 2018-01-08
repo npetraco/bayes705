@@ -1,10 +1,3 @@
-#--------------------------------------------------
-#Spit out domain of a CPT or POT:
-#--------------------------------------------------
-dom <- function(pot.table) {
-  return(names(attributes(pot.table)$dim))
-}
-
 #--------------------------------------------
 #Remove the tabs put into a .net file saved from SamIam
 #The tabs make loadHuginNet in gRain choke
