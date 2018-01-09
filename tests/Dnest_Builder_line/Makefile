@@ -10,6 +10,23 @@ default:
 	$(CC) -pthread -L ../../inst/DNest4/lib/ -o main *.o $(LIBS)
 	rm *.o
 
+copy:
+	cp ../Dnest_template/* .
+
+gen:
+	python3 model_gen.py
+
+show:
+	python3 showresults.py
+
 clean:
 	rm -rf *.o
 	rm -rf __pycache__
+
+cleantxt:
+	rm -rf *.o main
+	rm -rf __pycache__
+	rm levels.txt posterior_sample.txt sample_info.txt sample.txt sampler_state.txt weights.txt
+
+cleanall:
+	rm -rf *.o main __pycache__ *.txt MyModel.cpp MyModel.h
