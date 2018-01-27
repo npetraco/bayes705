@@ -116,3 +116,35 @@ WeibullPrior = structure(function
   samples <- WeibullPrior(runif(100), 5, 5)
   summary(samples)
 })
+
+GammaPrior = structure(function
+### Generate samples from the Gamma prior
+(u,
+### Input scalar/vector of values between 0 and 1
+shape, # kappa
+### The shape parameter of the distriubtion
+rate   # lambda
+### The scale parameter of the distribution
+) {
+ return(qgamma(u, shape = shape, rate = rate))
+ ### Samples from the Weibull prior
+}, ex=function() {
+  samples <- GammaPrior(runif(100), 5, 5)
+  summary(samples)
+})
+
+BetaPrior = structure(function
+### Generate samples from the Beta prior
+(u,
+### Input scalar/vector of values between 0 and 1
+shape1, # alpha
+### The shape parameter of the distriubtion
+shape2   # beta
+### The scale parameter of the distribution
+) {
+ return(qbeta(u, shape1 = shape1, shape2 = shape2))
+ ### Samples from the Weibull prior
+}, ex=function() {
+ samples <- BetaPrior(runif(100), 1, 1)
+ summary(samples)
+})

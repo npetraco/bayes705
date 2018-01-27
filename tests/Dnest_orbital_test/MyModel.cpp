@@ -71,7 +71,7 @@ double MyModel::log_likelihood() const
 double logp = 0.0;
 
 // Atomic log densities in real form:
-//logp += (-2*r)/3. + log(2) - log(6561*M_PI) + log(pow(-6 + r,2)*pow(r,4)*pow(cos(th),2)*sin(th)); // 3p0 = 2pz
+//logp += (-2*r)/3. + log(2) - log(6561*M_PI) + log(pow(-6 + r,2)*pow(r,4)*pow(cos(th),2)*sin(th));        // 3p0 = 3pz
 //logp += (-2*r)/3. + log(2) - log(6561*M_PI) + log(pow(-6 + r,2)*pow(r,4)*pow(cos(ph),2)*pow(sin(th),3)); // 3px, need to be in real form. Why??
 logp += (-2*r)/3. + log(2) - log(6561*M_PI) + log(pow(-6 + r,2)*pow(r,4)*pow(sin(ph),2)*pow(sin(th),3)); // 3py, need to be in real form. Why??
 if(std::isnan(logp) || std::isinf(logp))

@@ -1,0 +1,611 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     22481,        602]
+NotebookOptionsPosition[     21229,        555]
+NotebookOutlinePosition[     21583,        571]
+CellTagsIndexPosition[     21540,        568]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"DA", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "52", ",", "49", ",", "59", ",", "29", ",", "39", ",", "11", ",", "41"}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DB", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "32", ",", "20", ",", "7", ",", "12", ",", "30", ",", "17", ",", "10", 
+     ",", "32", ",", "29", ",", "39", ",", "11", ",", "41"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DC", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "3", ",", "29", ",", "20", ",", "7", ",", "12", ",", "30", ",", "17", ",",
+      "10", ",", "32", ",", "29", ",", "39", ",", "11", ",", "9", ",", "32"}],
+     "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "[", 
+    RowBox[{"\[Kappa]_", ",", "\[Lambda]_", ",", "DD_"}], "]"}], ":=", 
+   RowBox[{
+    UnderoverscriptBox["\[Product]", 
+     RowBox[{"i", "=", "1"}], 
+     RowBox[{"Length", "[", "DD", "]"}]], 
+    RowBox[{"PDF", "[", 
+     RowBox[{
+      RowBox[{"GammaDistribution", "[", 
+       RowBox[{"\[Kappa]", ",", "\[Lambda]"}], "]"}], ",", 
+      RowBox[{"DD", "[", 
+       RowBox[{"[", "i", "]"}], "]"}]}], "]"}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{
+  3.7253526636063633`*^9, {3.7253539074676247`*^9, 3.725353926657786*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"L", "[", 
+   RowBox[{"\[Kappa]", ",", "\[Lambda]", ",", "DA"}], "]"}], 
+  RowBox[{"PDF", "[", 
+   RowBox[{
+    RowBox[{"UniformDistribution", "[", 
+     RowBox[{"{", 
+      RowBox[{"a", ",", "1"}], "}"}], "]"}], ",", "\[Lambda]"}], "]"}], 
+  RowBox[{"PDF", "[", 
+   RowBox[{
+    RowBox[{"UniformDistribution", "[", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "25"}], "}"}], "]"}], ",", "\[Kappa]"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.725353972081294*^9, 3.7253540193186398`*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox["76681496892", 
+    RowBox[{
+     RowBox[{"-", "1"}], "+", "\[Kappa]"}]], " ", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{"-", "280"}], "/", "\[Lambda]"}]], " ", 
+   SuperscriptBox["\[Lambda]", 
+    RowBox[{
+     RowBox[{"-", "7"}], " ", "\[Kappa]"}]], " ", 
+   RowBox[{"(", 
+    TagBox[GridBox[{
+       {"\[Piecewise]", GridBox[{
+          {
+           FractionBox["1", "25"], 
+           RowBox[{"0", "\[LessEqual]", "\[Kappa]", "\[LessEqual]", "25"}]},
+          {"0", 
+           TagBox["True",
+            "PiecewiseDefault",
+            AutoDelete->True]}
+         },
+         AllowedDimensions->{2, Automatic},
+         Editable->True,
+         GridBoxAlignment->{
+          "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.84]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}},
+         Selectable->True]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{
+       "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.35]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     "Piecewise",
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True,
+     Selectable->False], ")"}], " ", 
+   RowBox[{"(", 
+    TagBox[GridBox[{
+       {"\[Piecewise]", GridBox[{
+          {
+           FractionBox["1000", "999"], 
+           RowBox[{
+            FractionBox["1", "1000"], "\[LessEqual]", "\[Lambda]", 
+            "\[LessEqual]", "1"}]},
+          {"0", 
+           TagBox["True",
+            "PiecewiseDefault",
+            AutoDelete->True]}
+         },
+         AllowedDimensions->{2, Automatic},
+         Editable->True,
+         GridBoxAlignment->{
+          "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.84]}, 
+             Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}, "RowsIndexed" -> {}},
+         Selectable->True]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{
+       "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.35]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}],
+     "Piecewise",
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True,
+     Selectable->False], ")"}]}], 
+  SuperscriptBox[
+   RowBox[{"Gamma", "[", "\[Kappa]", "]"}], "7"]]], "Output",
+ CellChangeTimes->{3.7253540355799*^9, 3.725356477643508*^9}]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.7253527026317587`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{"10", "^", 
+    RowBox[{"-", "3"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Z", "=", 
+  RowBox[{"NIntegrate", "[", 
+   RowBox[{
+    RowBox[{"NIntegrate", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"L", "[", 
+        RowBox[{"\[Kappa]", ",", "\[Lambda]", ",", "DA"}], "]"}], 
+       RowBox[{"PDF", "[", 
+        RowBox[{
+         RowBox[{"UniformDistribution", "[", 
+          RowBox[{"{", 
+           RowBox[{"a", ",", "1"}], "}"}], "]"}], ",", "\[Lambda]"}], "]"}], 
+       RowBox[{"PDF", "[", 
+        RowBox[{
+         RowBox[{"UniformDistribution", "[", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "25"}], "}"}], "]"}], ",", "\[Kappa]"}], "]"}]}],
+       ",", 
+      RowBox[{"{", 
+       RowBox[{"\[Kappa]", ",", "0", ",", "25"}], "}"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[Lambda]", ",", "a", ",", "1"}], "}"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.725353707672186*^9, 3.7253537142882957`*^9}, {
+   3.725353821941722*^9, 3.7253538575561457`*^9}, {3.72535417614779*^9, 
+   3.7253542518963757`*^9}, 3.725356450208105*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "inumr"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The integrand \[NoBreak]\\!\\(\\(76681496892\\^\\(\\(\\(-1\
+\\)\\) + \[Kappa]\\)\\\\ \[ExponentialE]\\^\\(\\(\\(-280\\)\\)/\[Lambda]\\)\\\
+\\ \[Lambda]\\^\\(\\(\\(-7\\)\\)\\\\ \[Kappa]\\)\\\\ \
+\\(\\((\\*TagBox[GridBox[{{\\\"\[Piecewise]\\\", GridBox[{{\\(1\\/25\\), \\(0 \
+\[LessEqual] \[Kappa] \[LessEqual] 25\\)}, {\\\"0\\\", TagBox[\\\"True\\\", \
+\\\"PiecewiseDefault\\\", Rule[AutoDelete, True]]}}, ColumnAlignments -> \
+{Left}, ColumnSpacings -> 1.2, ColumnWidths -> Automatic, AllowedDimensions \
+-> {2, Automatic}, Selectable -> True, Editable -> True]}}, ColumnAlignments \
+-> {Left}, ColumnSpacings -> 0.5, ColumnWidths -> Automatic], \\\"Piecewise\\\
+\", Rule[SyntaxForm, Equal], Rule[SelectWithContents, True], Rule[Selectable, \
+False], Rule[Editable, False], Rule[DeleteWithContents, True]])\\)\\)\\\\ \\(\
+\\((\\*TagBox[GridBox[{{\\\"\[Piecewise]\\\", GridBox[{{\\(1000\\/999\\), \
+\\(1\\/1000 \[LessEqual] \[Lambda] \[LessEqual] 1\\)}, {\\\"0\\\", \
+TagBox[\\\"True\\\", \\\"PiecewiseDefault\\\", Rule[AutoDelete, True]]}}, \
+ColumnAlignments -> {Left}, ColumnSpacings -> 1.2, ColumnWidths -> Automatic, \
+AllowedDimensions -> {2, Automatic}, Selectable -> True, Editable -> True]}}, \
+ColumnAlignments -> {Left}, ColumnSpacings -> 0.5, ColumnWidths -> \
+Automatic], \\\"Piecewise\\\", Rule[SyntaxForm, Equal], \
+Rule[SelectWithContents, True], Rule[Selectable, False], Rule[Editable, \
+False], Rule[DeleteWithContents, True]])\\)\\)\\)\\/\\(Gamma[\[Kappa]]\\)\\^7\
+\\)\[NoBreak] has evaluated to non-numerical values for all sampling points \
+in the region with boundaries \[NoBreak]\\!\\({\\({0, 25}\\)}\\)\[NoBreak]. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/NIntegrate/inumr\\\", \
+ButtonNote -> \\\"NIntegrate::inumr\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.725356460116139*^9, 3.725356480252851*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "inumr"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The integrand \[NoBreak]\\!\\(\\(76681496892\\^\\(\\(\\(-1\
+\\)\\) + \[Kappa]\\)\\\\ \[ExponentialE]\\^\\(\\(\\(-280\\)\\)/\[Lambda]\\)\\\
+\\ \[Lambda]\\^\\(\\(\\(-7\\)\\)\\\\ \[Kappa]\\)\\\\ \
+\\(\\((\\*TagBox[GridBox[{{\\\"\[Piecewise]\\\", GridBox[{{\\(1\\/25\\), \\(0 \
+\[LessEqual] \[Kappa] \[LessEqual] 25\\)}, {\\\"0\\\", TagBox[\\\"True\\\", \
+\\\"PiecewiseDefault\\\", Rule[AutoDelete, True]]}}, ColumnAlignments -> \
+{Left}, ColumnSpacings -> 1.2, ColumnWidths -> Automatic, AllowedDimensions \
+-> {2, Automatic}, Selectable -> True, Editable -> True]}}, ColumnAlignments \
+-> {Left}, ColumnSpacings -> 0.5, ColumnWidths -> Automatic], \\\"Piecewise\\\
+\", Rule[SyntaxForm, Equal], Rule[SelectWithContents, True], Rule[Selectable, \
+False], Rule[Editable, False], Rule[DeleteWithContents, True]])\\)\\)\\\\ \\(\
+\\((\\*TagBox[GridBox[{{\\\"\[Piecewise]\\\", GridBox[{{\\(1000\\/999\\), \
+\\(1\\/1000 \[LessEqual] \[Lambda] \[LessEqual] 1\\)}, {\\\"0\\\", \
+TagBox[\\\"True\\\", \\\"PiecewiseDefault\\\", Rule[AutoDelete, True]]}}, \
+ColumnAlignments -> {Left}, ColumnSpacings -> 1.2, ColumnWidths -> Automatic, \
+AllowedDimensions -> {2, Automatic}, Selectable -> True, Editable -> True]}}, \
+ColumnAlignments -> {Left}, ColumnSpacings -> 0.5, ColumnWidths -> \
+Automatic], \\\"Piecewise\\\", Rule[SyntaxForm, Equal], \
+Rule[SelectWithContents, True], Rule[Selectable, False], Rule[Editable, \
+False], Rule[DeleteWithContents, True]])\\)\\)\\)\\/\\(Gamma[\[Kappa]]\\)\\^7\
+\\)\[NoBreak] has evaluated to non-numerical values for all sampling points \
+in the region with boundaries \[NoBreak]\\!\\({\\({0, 25}\\)}\\)\[NoBreak]. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/NIntegrate/inumr\\\", \
+ButtonNote -> \\\"NIntegrate::inumr\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.725356460116139*^9, 3.725356480282955*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"NIntegrate", "::", "inumr"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The integrand \[NoBreak]\\!\\(\\(76681496892\\^\\(\\(\\(-1\
+\\)\\) + \[Kappa]\\)\\\\ \[ExponentialE]\\^\\(\\(\\(-280\\)\\)/\[Lambda]\\)\\\
+\\ \[Lambda]\\^\\(\\(\\(-7\\)\\)\\\\ \[Kappa]\\)\\\\ \
+\\(\\((\\*TagBox[GridBox[{{\\\"\[Piecewise]\\\", GridBox[{{\\(1\\/25\\), \\(0 \
+\[LessEqual] \[Kappa] \[LessEqual] 25\\)}, {\\\"0\\\", TagBox[\\\"True\\\", \
+\\\"PiecewiseDefault\\\", Rule[AutoDelete, True]]}}, ColumnAlignments -> \
+{Left}, ColumnSpacings -> 1.2, ColumnWidths -> Automatic, AllowedDimensions \
+-> {2, Automatic}, Selectable -> True, Editable -> True]}}, ColumnAlignments \
+-> {Left}, ColumnSpacings -> 0.5, ColumnWidths -> Automatic], \\\"Piecewise\\\
+\", Rule[SyntaxForm, Equal], Rule[SelectWithContents, True], Rule[Selectable, \
+False], Rule[Editable, False], Rule[DeleteWithContents, True]])\\)\\)\\\\ \\(\
+\\((\\*TagBox[GridBox[{{\\\"\[Piecewise]\\\", GridBox[{{\\(1000\\/999\\), \
+\\(1\\/1000 \[LessEqual] \[Lambda] \[LessEqual] 1\\)}, {\\\"0\\\", \
+TagBox[\\\"True\\\", \\\"PiecewiseDefault\\\", Rule[AutoDelete, True]]}}, \
+ColumnAlignments -> {Left}, ColumnSpacings -> 1.2, ColumnWidths -> Automatic, \
+AllowedDimensions -> {2, Automatic}, Selectable -> True, Editable -> True]}}, \
+ColumnAlignments -> {Left}, ColumnSpacings -> 0.5, ColumnWidths -> \
+Automatic], \\\"Piecewise\\\", Rule[SyntaxForm, Equal], \
+Rule[SelectWithContents, True], Rule[Selectable, False], Rule[Editable, \
+False], Rule[DeleteWithContents, True]])\\)\\)\\)\\/\\(Gamma[\[Kappa]]\\)\\^7\
+\\)\[NoBreak] has evaluated to non-numerical values for all sampling points \
+in the region with boundaries \[NoBreak]\\!\\({\\({0, 25}\\)}\\)\[NoBreak]. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/NIntegrate/inumr\\\", \
+ButtonNote -> \\\"NIntegrate::inumr\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.725356460116139*^9, 3.725356480320817*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \
+\[NoBreak]\\!\\(\\*StyleBox[\\(NIntegrate :: inumr\\), \
+\\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this calculation. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/stop\\\", \
+ButtonNote -> \\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{{3.725356460116139*^9, 3.725356480324044*^9}}],
+
+Cell[BoxData["1.5699619143879503`*^-31"], "Output",
+ CellChangeTimes->{{3.725356460646082*^9, 3.725356486872116*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["Z"], "Input",
+ CellChangeTimes->{3.725353722222137*^9}],
+
+Cell[BoxData["1.5699619143879503`*^-31"], "Output",
+ CellChangeTimes->{3.725353723517942*^9, 3.725353830018854*^9, 
+  3.725356503679144*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"p1", "=", 
+  RowBox[{
+   SubsuperscriptBox["\[Integral]", "a", "1"], 
+   RowBox[{
+    RowBox[{"L", "[", 
+     RowBox[{"\[Kappa]", ",", "\[Lambda]", ",", "DA"}], "]"}], 
+    RowBox[{"PDF", "[", 
+     RowBox[{
+      RowBox[{"UniformDistribution", "[", 
+       RowBox[{"{", 
+        RowBox[{"a", ",", "1"}], "}"}], "]"}], ",", "\[Lambda]"}], "]"}], 
+    RowBox[{"PDF", "[", 
+     RowBox[{
+      RowBox[{"UniformDistribution", "[", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "25"}], "}"}], "]"}], ",", "\[Kappa]"}], "]"}], 
+    RowBox[{"\[DifferentialD]", "\[Lambda]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.7253566071408987`*^9, 3.725356624391642*^9}, {
+  3.7253566761377907`*^9, 3.7253567399177723`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\[Piecewise]", GridBox[{
+       {
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{
+           SuperscriptBox["2", 
+            RowBox[{
+             RowBox[{"-", "2"}], "+", 
+             RowBox[{"2", " ", "\[Kappa]"}]}]], " ", 
+           SuperscriptBox["3", 
+            RowBox[{
+             RowBox[{"-", "4"}], "+", "\[Kappa]"}]], " ", 
+           SuperscriptBox["6390124741", 
+            RowBox[{
+             RowBox[{"-", "1"}], "+", "\[Kappa]"}]], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "1000"}], " ", 
+              RowBox[{"ExpIntegralE", "[", 
+               RowBox[{
+                RowBox[{"2", "-", 
+                 RowBox[{"7", " ", "\[Kappa]"}]}], ",", "280"}], "]"}]}], "+", 
+             RowBox[{
+              SuperscriptBox["10", 
+               RowBox[{"21", " ", "\[Kappa]"}]], " ", 
+              RowBox[{"ExpIntegralE", "[", 
+               RowBox[{
+                RowBox[{"2", "-", 
+                 RowBox[{"7", " ", "\[Kappa]"}]}], ",", "280000"}], "]"}]}]}],
+             ")"}]}], 
+          RowBox[{"925", " ", 
+           SuperscriptBox[
+            RowBox[{"Gamma", "[", "\[Kappa]", "]"}], "7"]}]]}], 
+        RowBox[{"0", "\[LessEqual]", "\[Kappa]", "\[LessEqual]", "25"}]},
+       {"0", 
+        TagBox["True",
+         "PiecewiseDefault",
+         AutoDelete->True]}
+      },
+      AllowedDimensions->{2, Automatic},
+      Editable->True,
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{
+       "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.84]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}},
+      Selectable->True]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxItemSize->{
+    "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.35]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  "Piecewise",
+  DeleteWithContents->True,
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{
+  3.725356632744843*^9, 3.72535669421955*^9, {3.7253567271423683`*^9, 
+   3.7253567438445053`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"p1", "[", 
+  RowBox[{"[", 
+   RowBox[{"1", ",", "1", ",", "1"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7253567456892977`*^9, 3.725356757965137*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"925", " ", 
+     SuperscriptBox[
+      RowBox[{"Gamma", "[", "\[Kappa]", "]"}], "7"]}]], 
+   RowBox[{
+    SuperscriptBox["2", 
+     RowBox[{
+      RowBox[{"-", "2"}], "+", 
+      RowBox[{"2", " ", "\[Kappa]"}]}]], " ", 
+    SuperscriptBox["3", 
+     RowBox[{
+      RowBox[{"-", "4"}], "+", "\[Kappa]"}]], " ", 
+    SuperscriptBox["6390124741", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "\[Kappa]"}]], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "1000"}], " ", 
+       RowBox[{"ExpIntegralE", "[", 
+        RowBox[{
+         RowBox[{"2", "-", 
+          RowBox[{"7", " ", "\[Kappa]"}]}], ",", "280"}], "]"}]}], "+", 
+      RowBox[{
+       SuperscriptBox["10", 
+        RowBox[{"21", " ", "\[Kappa]"}]], " ", 
+       RowBox[{"ExpIntegralE", "[", 
+        RowBox[{
+         RowBox[{"2", "-", 
+          RowBox[{"7", " ", "\[Kappa]"}]}], ",", "280000"}], "]"}]}]}], 
+     ")"}]}]}]}]], "Output",
+ CellChangeTimes->{{3.725356749064686*^9, 3.725356758363389*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Z", "=", 
+  RowBox[{"NIntegrate", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", 
+       RowBox[{"925", " ", 
+        SuperscriptBox[
+         RowBox[{"Gamma", "[", "\[Kappa]", "]"}], "7"]}]]}], 
+     SuperscriptBox["2", 
+      RowBox[{
+       RowBox[{"-", "2"}], "+", 
+       RowBox[{"2", " ", "\[Kappa]"}]}]], " ", 
+     SuperscriptBox["3", 
+      RowBox[{
+       RowBox[{"-", "4"}], "+", "\[Kappa]"}]], " ", 
+     SuperscriptBox["6390124741", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "\[Kappa]"}]], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "1000"}], " ", 
+        RowBox[{"ExpIntegralE", "[", 
+         RowBox[{
+          RowBox[{"2", "-", 
+           RowBox[{"7", " ", "\[Kappa]"}]}], ",", "280"}], "]"}]}], "+", 
+       RowBox[{
+        SuperscriptBox["10", 
+         RowBox[{"21", " ", "\[Kappa]"}]], " ", 
+        RowBox[{"ExpIntegralE", "[", 
+         RowBox[{
+          RowBox[{"2", "-", 
+           RowBox[{"7", " ", "\[Kappa]"}]}], ",", "280000"}], "]"}]}]}], 
+      ")"}]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[Kappa]", ",", "0", ",", "25"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.72535678031345*^9, 3.7253568104515877`*^9}}],
+
+Cell[BoxData["1.5699630065638502`*^-31"], "Output",
+ CellChangeTimes->{{3.725356798634223*^9, 3.72535681138447*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Log", "[", "Z", "]"}]], "Input",
+ CellChangeTimes->{{3.72535681307763*^9, 3.7253568158360023`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", "70.92908582643099`"}]], "Output",
+ CellChangeTimes->{3.725356816169004*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 694},
+WindowMargins->{{90, Automatic}, {Automatic, 37}},
+FrontEndVersion->"10.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 29, \
+2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1277, 36, 114, "Input"],
+Cell[CellGroupData[{
+Cell[1860, 60, 525, 15, 28, "Input"],
+Cell[2388, 77, 3929, 108, 77, "Output"]
+}, Open  ]],
+Cell[6332, 188, 89, 1, 46, "Input"],
+Cell[CellGroupData[{
+Cell[6446, 193, 1123, 30, 97, "Input"],
+Cell[7572, 225, 2052, 30, 119, "Message"],
+Cell[9627, 257, 2052, 30, 119, "Message"],
+Cell[11682, 289, 2052, 30, 119, "Message"],
+Cell[13737, 321, 558, 11, 24, "Message"],
+Cell[14298, 334, 117, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14452, 340, 69, 1, 28, "Input"],
+Cell[14524, 343, 140, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14701, 350, 732, 19, 67, "Input"],
+Cell[15436, 371, 2824, 79, 67, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18297, 455, 180, 4, 28, "Input"],
+Cell[18480, 461, 1064, 34, 75, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19581, 500, 1246, 38, 82, "Input"],
+Cell[20830, 540, 116, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20983, 546, 123, 2, 28, "Input"],
+Cell[21109, 550, 104, 2, 62, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

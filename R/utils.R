@@ -1,3 +1,18 @@
+#---------------------------------------------------
+# log(a+b) = log(exp(a) + exp(b)) for nested sampling plots
+#---------------------------------------------------
+logsumexp <- function(aa, bb) {
+  # Sum a and b via their logarithms, such that if:
+  # a = log(x) and b = log(y)
+  # logPlus(a, b) returns log(x + y)
+  if (aa > bb) {
+    ssum <- aa + log(1+exp(bb-aa))
+  } else {
+    ssum <- bb + log(1+exp(aa-bb))
+  }
+  return(ssum)
+}
+
 #--------------------------------------------
 #Remove the tabs put into a .net file saved from SamIam
 #The tabs make loadHuginNet in gRain choke
