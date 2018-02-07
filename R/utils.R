@@ -13,6 +13,26 @@ logsumexp <- function(aa, bb) {
   return(ssum)
 }
 
+#---------------------------------------------------
+# for a > b log(a-b) = log(exp(a) - exp(b))
+#---------------------------------------------------
+logdiffexp <- function(aa, bb) {
+
+  if(aa > bb) {
+    biggest <- aa
+    a <- aa - biggest
+    b <- bb - biggest
+    ddif <- log(exp(a) - exp(b)) + biggest
+  } else {
+    # biggest <- bb
+    # a <- aa - biggest
+    # b <- bb - biggest
+    # ddif <- log(exp(b) - exp(a)) + biggest
+    stop("aa < bb !!!!!")
+  }
+  return(ddif)
+}
+
 #--------------------------------------------
 #Remove the tabs put into a .net file saved from SamIam
 #The tabs make loadHuginNet in gRain choke

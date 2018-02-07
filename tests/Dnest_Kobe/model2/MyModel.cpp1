@@ -1,0 +1,170 @@
+#include "MyModel.h"
+#include "DNest4.h"
+#include <boost/math/distributions/normal.hpp>
+#include <boost/math/distributions/gamma.hpp>
+#include <boost/math/special_functions/gamma.hpp>
+#include <iomanip>
+
+boost::math::normal __boost_dist(0.0, 1.0);
+
+using namespace std;
+using namespace DNest4;
+
+
+
+MyModel::MyModel()
+{
+
+}
+
+void MyModel::from_prior(RNG& rng)
+{
+_ppi0 = rng.rand();
+_ppi1 = rng.rand();
+_ppi2 = rng.rand();
+_ppi3 = rng.rand();
+_ppi4 = rng.rand();
+_ppi5 = rng.rand();
+_ppi6 = rng.rand();
+_ppi7 = rng.rand();
+
+ppi0 = 0 + (1 - (0))*_ppi0;
+ppi1 = 0 + (1 - (0))*_ppi1;
+ppi2 = 0 + (1 - (0))*_ppi2;
+ppi3 = 0 + (1 - (0))*_ppi3;
+ppi4 = 0 + (1 - (0))*_ppi4;
+ppi5 = 0 + (1 - (0))*_ppi5;
+ppi6 = 0 + (1 - (0))*_ppi6;
+ppi7 = 0 + (1 - (0))*_ppi7;
+
+}
+
+double MyModel::perturb(RNG& rng)
+{
+double logH = 0.0;
+
+int which;
+int reps = 1;
+if(rng.rand() <= 0.5)
+    reps = (int)pow(10.0, 2*rng.rand());
+for(int i=0; i<reps; ++i)
+{
+which = rng.rand_int(8);
+if(which == 0)
+{
+_ppi0 += rng.randh();
+DNest4::wrap(_ppi0, 0.0, 1.0);
+}
+if(which == 1)
+{
+_ppi1 += rng.randh();
+DNest4::wrap(_ppi1, 0.0, 1.0);
+}
+if(which == 2)
+{
+_ppi2 += rng.randh();
+DNest4::wrap(_ppi2, 0.0, 1.0);
+}
+if(which == 3)
+{
+_ppi3 += rng.randh();
+DNest4::wrap(_ppi3, 0.0, 1.0);
+}
+if(which == 4)
+{
+_ppi4 += rng.randh();
+DNest4::wrap(_ppi4, 0.0, 1.0);
+}
+if(which == 5)
+{
+_ppi5 += rng.randh();
+DNest4::wrap(_ppi5, 0.0, 1.0);
+}
+if(which == 6)
+{
+_ppi6 += rng.randh();
+DNest4::wrap(_ppi6, 0.0, 1.0);
+}
+if(which == 7)
+{
+_ppi7 += rng.randh();
+DNest4::wrap(_ppi7, 0.0, 1.0);
+}
+}
+
+ppi0 = 0 + (1 - (0))*_ppi0;
+ppi1 = 0 + (1 - (0))*_ppi1;
+ppi2 = 0 + (1 - (0))*_ppi2;
+ppi3 = 0 + (1 - (0))*_ppi3;
+ppi4 = 0 + (1 - (0))*_ppi4;
+ppi5 = 0 + (1 - (0))*_ppi5;
+ppi6 = 0 + (1 - (0))*_ppi6;
+ppi7 = 0 + (1 - (0))*_ppi7;
+
+return logH;
+
+
+}
+
+double MyModel::log_likelihood() const
+{
+double logp = 0.0;
+
+logp += boost::math::lgamma<double>(n0 + 1);
+logp -= boost::math::lgamma<double>(y0 + 1);
+logp -= boost::math::lgamma<double>(n0 - (y0) + 1);
+logp += (y0)*log(ppi0) + (n0 - (y0))*log(1.0 - (ppi0));
+logp += boost::math::lgamma<double>(n1 + 1);
+logp -= boost::math::lgamma<double>(y1 + 1);
+logp -= boost::math::lgamma<double>(n1 - (y1) + 1);
+logp += (y1)*log(ppi1) + (n1 - (y1))*log(1.0 - (ppi1));
+logp += boost::math::lgamma<double>(n2 + 1);
+logp -= boost::math::lgamma<double>(y2 + 1);
+logp -= boost::math::lgamma<double>(n2 - (y2) + 1);
+logp += (y2)*log(ppi2) + (n2 - (y2))*log(1.0 - (ppi2));
+logp += boost::math::lgamma<double>(n3 + 1);
+logp -= boost::math::lgamma<double>(y3 + 1);
+logp -= boost::math::lgamma<double>(n3 - (y3) + 1);
+logp += (y3)*log(ppi3) + (n3 - (y3))*log(1.0 - (ppi3));
+logp += boost::math::lgamma<double>(n4 + 1);
+logp -= boost::math::lgamma<double>(y4 + 1);
+logp -= boost::math::lgamma<double>(n4 - (y4) + 1);
+logp += (y4)*log(ppi4) + (n4 - (y4))*log(1.0 - (ppi4));
+logp += boost::math::lgamma<double>(n5 + 1);
+logp -= boost::math::lgamma<double>(y5 + 1);
+logp -= boost::math::lgamma<double>(n5 - (y5) + 1);
+logp += (y5)*log(ppi5) + (n5 - (y5))*log(1.0 - (ppi5));
+logp += boost::math::lgamma<double>(n6 + 1);
+logp -= boost::math::lgamma<double>(y6 + 1);
+logp -= boost::math::lgamma<double>(n6 - (y6) + 1);
+logp += (y6)*log(ppi6) + (n6 - (y6))*log(1.0 - (ppi6));
+logp += boost::math::lgamma<double>(n7 + 1);
+logp -= boost::math::lgamma<double>(y7 + 1);
+logp -= boost::math::lgamma<double>(n7 - (y7) + 1);
+logp += (y7)*log(ppi7) + (n7 - (y7))*log(1.0 - (ppi7));
+if(std::isnan(logp) || std::isinf(logp))
+    logp = -1E300;
+
+return logp;
+
+}
+
+void MyModel::print(std::ostream& out) const
+{
+out<<setprecision(12);
+out<<ppi0<<' ';
+out<<ppi1<<' ';
+out<<ppi2<<' ';
+out<<ppi3<<' ';
+out<<ppi4<<' ';
+out<<ppi5<<' ';
+out<<ppi6<<' ';
+out<<ppi7<<' ';
+
+}
+
+string MyModel::description() const
+{
+return string("ppi0, ppi1, ppi2, ppi3, ppi4, ppi5, ppi6, ppi7");
+}
+
