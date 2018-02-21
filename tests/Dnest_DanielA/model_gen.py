@@ -11,7 +11,7 @@ data = {"x": np.array([0.1716393, 0.2905149, 0.5521852, 0.8684159, 1.046752, 1.2
 # Create the model
 model = bd.Model()
 
-# Prior p(m). Need to modify C++ for Half-Cauchy
+# Prior p(m). Need to modify C++ for Half-Cauchy on beta1
 model.add_node(bd.Node("beta0", bd.Cauchy(0, 1)))
 model.add_node(bd.Node("beta1", bd.Cauchy(0, 5)))  # Should be Half-Cauchy
 model.add_node(bd.Node("epsilon", bd.Normal(0, 1)))
@@ -26,5 +26,5 @@ for i in range(0, data["N"]):
 bd.generate_h(model, data)
 bd.generate_cpp(model, data)
 
-# Run result: log(Z)                 = XXXX
+# Run result: log(Z)                 = 2.24468713205
 # Mathematica result:                = XXXX

@@ -1,3 +1,5 @@
+library(bayes705)
+
 rt.dir <- "/Users/npetraco/latex/class/fos705/Applied_Bayes/R/bayes705/tests/Dnest_Kobe/model2/"
 
 # Saved samples at which likelihood evaluations occured
