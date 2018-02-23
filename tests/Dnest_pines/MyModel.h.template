@@ -8,12 +8,7 @@
 class MyModel
 {
     private:
-double _mucssp, mucssp;
-static constexpr double Xb = 1.517116;
-static constexpr double sCS = 0.0004726074;
-static constexpr double Yb = 1.517456;
-static constexpr double sSP = 0.001038594;
-
+{DECLARATIONS}
 
     public:
         // Constructor only gives size of params
